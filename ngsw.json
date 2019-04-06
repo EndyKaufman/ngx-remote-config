@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1554577521932,
+  "timestamp": 1554579136353,
   "index": "/ngx-remote-config/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
         "/ngx-remote-config/6.43e70d6ae029babf7aa5.js",
         "/ngx-remote-config/favicon.ico",
         "/ngx-remote-config/index.html",
-        "/ngx-remote-config/main.76132710e7e1d9bb2c8f.js",
+        "/ngx-remote-config/main.553cf5ac76b5d797175c.js",
         "/ngx-remote-config/polyfills.cdba90323ff258e4181b.js",
         "/ngx-remote-config/runtime.8bd0aa1329b037332d4d.js",
         "/ngx-remote-config/scripts.914dea7e8b3fda1cf659.js",
@@ -58,8 +58,8 @@
     "/ngx-remote-config/assets/img/icons/github-circle.svg": "9a2dfab04214dc8b31f2df7baec3419e18ed166e",
     "/ngx-remote-config/assets/img/icons/shape-outline.svg": "9d0f9439eb430f8282fd8cc60e674b07ec8318ac",
     "/ngx-remote-config/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/ngx-remote-config/index.html": "4c3ab723cab178a151911a7e13b8cd7d2da8204b",
-    "/ngx-remote-config/main.76132710e7e1d9bb2c8f.js": "3ad17f8ca4cb58483c517efda65310fc2fa5926b",
+    "/ngx-remote-config/index.html": "be350764e1bec308c95d759f5501972ebf576b1e",
+    "/ngx-remote-config/main.553cf5ac76b5d797175c.js": "96766fdd60556c1e67202d912a1e1782562b6548",
     "/ngx-remote-config/polyfills.cdba90323ff258e4181b.js": "f86774b63dfdc9f982f0511427b7968c4e0f13a8",
     "/ngx-remote-config/runtime.8bd0aa1329b037332d4d.js": "fde5beb993905b65705f5c40f63378f88158e8f6",
     "/ngx-remote-config/scripts.914dea7e8b3fda1cf659.js": "13b35406db01f6b2cdedd433d924bd6786f22d9c",
