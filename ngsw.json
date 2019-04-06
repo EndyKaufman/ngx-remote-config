@@ -1,0 +1,86 @@
+{
+  "configVersion": 1,
+  "timestamp": 1554577521932,
+  "index": "/ngx-remote-config/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ngx-remote-config/1.2163bbf16d0c91cfca32.js",
+        "/ngx-remote-config/5.4e66673b65f36bbeed5f.js",
+        "/ngx-remote-config/6.43e70d6ae029babf7aa5.js",
+        "/ngx-remote-config/favicon.ico",
+        "/ngx-remote-config/index.html",
+        "/ngx-remote-config/main.76132710e7e1d9bb2c8f.js",
+        "/ngx-remote-config/polyfills.cdba90323ff258e4181b.js",
+        "/ngx-remote-config/runtime.8bd0aa1329b037332d4d.js",
+        "/ngx-remote-config/scripts.914dea7e8b3fda1cf659.js",
+        "/ngx-remote-config/styles.c04bae1209a395e691a0.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/ngx-remote-config/assets/icons/icon-128x128.png",
+        "/ngx-remote-config/assets/icons/icon-144x144.png",
+        "/ngx-remote-config/assets/icons/icon-152x152.png",
+        "/ngx-remote-config/assets/icons/icon-192x192.png",
+        "/ngx-remote-config/assets/icons/icon-384x384.png",
+        "/ngx-remote-config/assets/icons/icon-512x512.png",
+        "/ngx-remote-config/assets/icons/icon-72x72.png",
+        "/ngx-remote-config/assets/icons/icon-96x96.png",
+        "/ngx-remote-config/assets/img/icons/cloud_circle.svg",
+        "/ngx-remote-config/assets/img/icons/github-circle.svg",
+        "/ngx-remote-config/assets/img/icons/shape-outline.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/ngx-remote-config/1.2163bbf16d0c91cfca32.js": "62eb9472b93da7be645e2c022783be3207173b79",
+    "/ngx-remote-config/5.4e66673b65f36bbeed5f.js": "d5144c762f8ba832093cc68159b165d843e89e5e",
+    "/ngx-remote-config/6.43e70d6ae029babf7aa5.js": "5878e34d60386f69d55646fe5c34a61ae57cb215",
+    "/ngx-remote-config/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/ngx-remote-config/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/ngx-remote-config/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/ngx-remote-config/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/ngx-remote-config/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/ngx-remote-config/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/ngx-remote-config/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/ngx-remote-config/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/ngx-remote-config/assets/img/icons/cloud_circle.svg": "6423b5ed4cee72d88f3f3295dd8a2e8e31ee1970",
+    "/ngx-remote-config/assets/img/icons/github-circle.svg": "9a2dfab04214dc8b31f2df7baec3419e18ed166e",
+    "/ngx-remote-config/assets/img/icons/shape-outline.svg": "9d0f9439eb430f8282fd8cc60e674b07ec8318ac",
+    "/ngx-remote-config/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/ngx-remote-config/index.html": "4c3ab723cab178a151911a7e13b8cd7d2da8204b",
+    "/ngx-remote-config/main.76132710e7e1d9bb2c8f.js": "3ad17f8ca4cb58483c517efda65310fc2fa5926b",
+    "/ngx-remote-config/polyfills.cdba90323ff258e4181b.js": "f86774b63dfdc9f982f0511427b7968c4e0f13a8",
+    "/ngx-remote-config/runtime.8bd0aa1329b037332d4d.js": "fde5beb993905b65705f5c40f63378f88158e8f6",
+    "/ngx-remote-config/scripts.914dea7e8b3fda1cf659.js": "13b35406db01f6b2cdedd433d924bd6786f22d9c",
+    "/ngx-remote-config/styles.c04bae1209a395e691a0.css": "b57cccb72903deb216f8fbcb1e9acb2977ce2c72"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
