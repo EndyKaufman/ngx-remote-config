@@ -56,5 +56,9 @@
     "@angular/common": "^7.2.4",
     "@angular/compiler": "^7.2.4",
     "@angular/core": "^7.2.4"
+  },
+  "dependencies": {
+    "path-to-regexp": "^3.0.0",
+    "dot-object": "^1.7.1"
   }
 }
