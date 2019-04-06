@@ -26,7 +26,7 @@ npm i --save ngx-remote-config
 
 app.module.ts
 ```js 
-import { NgxRepositoryModule } from 'ngx-remote-config';
+import { NgxRemoteConfigModule } from 'ngx-remote-config';
 
 @NgModule({
   imports: [

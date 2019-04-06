@@ -1,3 +1,12 @@
+## [0.0.2](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.1...0.0.2) (2019-04-06)
+
+
+### Bug Fixes
+
+* Add path-to-regexp and dot-object to lib package.json ([44cd3bb](https://github.com/EndyKaufman/ngx-remote-config/commit/44cd3bb))
+
+
+
 ## 0.0.1 (2019-04-06)
 
 * First commit
