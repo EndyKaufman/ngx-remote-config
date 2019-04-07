@@ -5,7 +5,7 @@
 [![npm version](https://badge.fury.io/js/ngx-remote-config.svg)](https://badge.fury.io/js/ngx-remote-config)
 
 
-Remote configurations for Angular applications, with built-in interceptor for mock REST data and non-permanent api
+Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api
 
 ## Installation
 
@@ -28,11 +28,13 @@ npm i --save ngx-remote-config
 
 app.module.ts
 ```js 
+import { HttpClientModule } from '@angular/common/http';
 import { NgxRemoteConfigModule } from 'ngx-remote-config';
 
 @NgModule({
   imports: [
     ...
+    HttpClientModule,
     NgxRemoteConfigModule.forRoot({
       url: 'https://testapi.io/api/EndyKaufman/ngx-remote-config.json'
     }),
@@ -43,17 +45,36 @@ import { NgxRemoteConfigModule } from 'ngx-remote-config';
 export class AppModule {}
 ```
 
-app.component.ts
+app.component.html
 ```html
 ...
+<p>Load with directive</p>
 <ng-container *remoteConfig="let config">
   {{config|json}}
+</ng-container>
+<p>Load with service</p>
+<ng-container *ngIf="serviceConfig$ | async as serviceConfig">
+  {{serviceConfig|json}}
 </ng-container>
 ...
 ```
 
+app.component.ts
+```js
+import { NgxRemoteConfigService } from 'ngx-remote-config';
+import { Observable } from 'rxjs';
+...
+serviceConfig$: Observable<any>;
+constructor(
+  private _ngxRemoteConfigService: NgxRemoteConfigService
+) {
+  this.serviceConfig$ = this._ngxRemoteConfigService.config$.asObservable();
+}
+...
+```
+
 settings.json (https://testapi.io/api/EndyKaufman/ngx-remote-config.json)
-```json
+```js
 {
   "options":{
     "name":"Remote name",

@@ -14,14 +14,14 @@ export function appInitialize(ngxRemoteConfigService: NgxRemoteConfigService) {
 }
 
 @Injectable()
-export class NgxRemoteConfigService {
-  config$ = new BehaviorSubject<any>(undefined);
+export class NgxRemoteConfigService<T = any> {
+  config$ = new BehaviorSubject<T>(undefined);
   constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) {}
   initConfigAsync() {
     return new Promise(resolve =>
       this._httpClient
-        .get(this._options.url)
-        .pipe(catchError(error => of(true)))
+        .get<T>(this._options.url)
+        .pipe(catchError(error => of({} as T)))
         .subscribe(data => {
           this.config$.next(data);
           resolve(data);
@@ -61,7 +61,7 @@ export class NgxRemoteConfigService {
     }
     return undefined;
   }
-  private matchUrl(dotConfig: any, config: any, url: string, method: string, response: any, founded: boolean) {
+  private matchUrl(dotConfig: any, config: T, url: string, method: string, response: any, founded: boolean) {
     let objectValue;
     objectValue = dot.pick(`${url}.${method}`, config);
     if (objectValue !== undefined) {
