@@ -1,3 +1,12 @@
+## [0.0.3](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.2...0.0.3) (2019-04-07)
+
+
+### Bug Fixes
+
+* Add generic type for responded config ([b994521](https://github.com/EndyKaufman/ngx-remote-config/commit/b994521))
+
+
+
 ## [0.0.2](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.1...0.0.2) (2019-04-06)
 
 
