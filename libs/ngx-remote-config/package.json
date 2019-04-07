@@ -1,7 +1,7 @@
 {
   "name": "ngx-remote-config",
-  "version": "0.0.2",
-  "description": "Remote configurations for Angular applications, with built-in interceptor for mock REST data and non-permanent api",
+  "version": "0.0.3",
+  "description": "Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api",
   "keywords": [
     "angular",
     "ng",
@@ -40,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/EndyKaufman/ngx-remote-config/issues"
   },
-  "homepage": "https://github.com/EndyKaufman/ngx-remote-config",
+  "homepage": "https://endykaufman.github.io/ngx-remote-config/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EndyKaufman/ngx-remote-config.git"

@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/ngx-remote-config.svg)](https://badge.fury.io/js/ngx-remote-config)
 
 
-Remote configurations for Angular applications, with built-in interceptor for mock REST data and non-permanent api
+Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api
 
 ## Installation
 
