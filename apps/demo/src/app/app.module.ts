@@ -26,7 +26,8 @@ import { MyErrorStateMatcher } from './shared/utils/my-error-state-matcher';
     BrowserModule.withServerTransition({ appId: 'ngx-remote-config' }),
     NavbarModule,
     NgxRemoteConfigModule.forRoot({
-      url: 'https://testapi.io/api/EndyKaufman/ngx-remote-config.json'
+      url: environment.remoteConfig,
+      notLockAppInitialize: true
     }),
     RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

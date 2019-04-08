@@ -21,7 +21,7 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
   ) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (!this._options.withoutIterceptor && request.url !== this._options.url) {
-      let response = this._ngxRemoteConfigService.get(request.url, request.method);
+      const response = this._ngxRemoteConfigService.get(request.url, request.method);
       if (response !== undefined && typeof response === 'string') {
         const requestWithCustomUrl = request.clone({
           url: response

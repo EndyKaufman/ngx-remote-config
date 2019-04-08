@@ -9,7 +9,7 @@ import { INgxRemoteConfig } from './ngx-remote-config.interface';
 declare var require: any;
 const pathToRegexp = require('path-to-regexp');
 
-export function appInitialize(ngxRemoteConfigService: NgxRemoteConfigService) {
+export function initializeApp(ngxRemoteConfigService: NgxRemoteConfigService) {
   return () => ngxRemoteConfigService.initConfigAsync();
 }
 
@@ -21,7 +21,7 @@ export class NgxRemoteConfigService<T = any> {
     return new Promise(resolve =>
       this._httpClient
         .get<T>(this._options.url)
-        .pipe(catchError(error => of({} as T)))
+        .pipe(catchError(error => of((this._options.default || {}) as T)))
         .subscribe(data => {
           this.config$.next(data);
           resolve(data);
