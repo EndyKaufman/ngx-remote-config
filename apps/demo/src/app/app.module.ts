@@ -38,4 +38,4 @@ import { MyErrorStateMatcher } from './shared/utils/my-error-state-matcher';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

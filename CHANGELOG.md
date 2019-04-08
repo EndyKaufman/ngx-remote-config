@@ -1,3 +1,13 @@
+## [0.0.4](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.3...0.0.4) (2019-04-08)
+
+
+### Bug Fixes
+
+* Add default value if remote config not founded, add support disable run request in app initialize ([786a3c5](https://github.com/EndyKaufman/ngx-remote-config/commit/786a3c5))
+* Rename appInitialize to initializeApp ([bdc58d3](https://github.com/EndyKaufman/ngx-remote-config/commit/bdc58d3))
+
+
+
 ## [0.0.3](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.2...0.0.3) (2019-04-07)
 
 
