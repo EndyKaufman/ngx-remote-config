@@ -33,12 +33,16 @@ export class NgxRemoteConfigModule {
                 : DEFAULT_NGX_REMOTE_CONFIG.notLockAppInitialize
           }
         },
-        {
-          provide: APP_INITIALIZER,
-          useFactory: appInitialize,
-          multi: true,
-          deps: [NgxRemoteConfigService]
-        },
+        ...(options.withoutAppInitialize
+          ? []
+          : [
+              {
+                provide: APP_INITIALIZER,
+                useFactory: appInitialize,
+                multi: true,
+                deps: [NgxRemoteConfigService]
+              }
+            ]),
         {
           provide: HTTP_INTERCEPTORS,
           useExisting: NgxRemoteConfigInterceptor,
