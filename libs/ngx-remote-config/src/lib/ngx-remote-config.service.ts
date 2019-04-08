@@ -16,7 +16,7 @@ export function initializeApp(ngxRemoteConfigService: NgxRemoteConfigService) {
 @Injectable()
 export class NgxRemoteConfigService<T = any> {
   config$ = new BehaviorSubject<T>(undefined);
-  constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) {}
+  constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) { }
   initConfigAsync() {
     return new Promise(resolve =>
       this._httpClient
@@ -35,7 +35,7 @@ export class NgxRemoteConfigService<T = any> {
     let response = null;
     let founded = false;
     const config = this.config$.getValue();
-    const dotConfig = dot.dot(config);
+    const dotConfig = dot.dot(config || {});
     const isHttp = path.indexOf('http://') !== 0;
     const isHttps = path.indexOf('https://') !== 0;
     const domain = isHttp || isHttps ? path.replace('http://', '').replace('https://', '') : path;
@@ -63,11 +63,11 @@ export class NgxRemoteConfigService<T = any> {
   }
   private matchUrl(dotConfig: any, config: T, url: string, method: string, response: any, founded: boolean) {
     let objectValue;
-    objectValue = dot.pick(`${url}.${method}`, config);
+    objectValue = dot.pick(`${url}.${method}`, config || {});
     if (objectValue !== undefined) {
       return { response: objectValue, founded: true };
     }
-    objectValue = dot.pick(url, config);
+    objectValue = dot.pick(url, config || {});
     if (objectValue !== undefined) {
       return { response: objectValue, founded: true };
     }
