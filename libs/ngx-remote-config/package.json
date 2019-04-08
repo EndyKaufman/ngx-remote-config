@@ -1,6 +1,6 @@
 {
   "name": "ngx-remote-config",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api",
   "keywords": [
     "angular",
