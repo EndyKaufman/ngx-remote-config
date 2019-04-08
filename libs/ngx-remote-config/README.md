@@ -19,6 +19,8 @@ npm i --save ngx-remote-config
 
 [Demo settings](https://testapi.io/api/EndyKaufman/ngx-remote-config.json) - Settings for demo application stored on https://testapi.io
 
+[Demo Ionic](https://github.com/rucken/todo-ionic) - Example usage in ionic application with native HTTP module
+
 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) - Library usage for match url on interceptor
 
 
