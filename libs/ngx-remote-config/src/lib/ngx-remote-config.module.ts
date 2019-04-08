@@ -5,7 +5,7 @@ import { DEFAULT_NGX_REMOTE_CONFIG, NGX_REMOTE_CONFIG } from './ngx-remote-confi
 import { NgxRemoteConfigDirective } from './ngx-remote-config.directive';
 import { NgxRemoteConfigInterceptor } from './ngx-remote-config.interceptor';
 import { INgxRemoteConfig } from './ngx-remote-config.interface';
-import { appInitialize, NgxRemoteConfigService } from './ngx-remote-config.service';
+import { initializeApp, NgxRemoteConfigService } from './ngx-remote-config.service';
 
 @NgModule({
   imports: [CommonModule],
@@ -38,7 +38,7 @@ export class NgxRemoteConfigModule {
           : [
               {
                 provide: APP_INITIALIZER,
-                useFactory: appInitialize,
+                useFactory: initializeApp,
                 multi: true,
                 deps: [NgxRemoteConfigService]
               }

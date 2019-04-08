@@ -9,7 +9,7 @@ import { INgxRemoteConfig } from './ngx-remote-config.interface';
 declare var require: any;
 const pathToRegexp = require('path-to-regexp');
 
-export function appInitialize(ngxRemoteConfigService: NgxRemoteConfigService) {
+export function initializeApp(ngxRemoteConfigService: NgxRemoteConfigService) {
   return () => ngxRemoteConfigService.initConfigAsync();
 }
 
