@@ -16,7 +16,7 @@ export function initializeApp(ngxRemoteConfigService: NgxRemoteConfigService) {
 @Injectable()
 export class NgxRemoteConfigService<T = any> {
   config$ = new BehaviorSubject<T>(undefined);
-  constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) { }
+  constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) {}
   initConfigAsync() {
     return new Promise(resolve =>
       this._httpClient

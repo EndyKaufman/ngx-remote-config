@@ -1,3 +1,12 @@
+## [0.0.5](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.4...0.0.5) (2019-04-08)
+
+
+### Bug Fixes
+
+* Add work dot with empty config ([db5b384](https://github.com/EndyKaufman/ngx-remote-config/commit/db5b384))
+
+
+
 ## [0.0.4](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.3...0.0.4) (2019-04-08)
 
 
