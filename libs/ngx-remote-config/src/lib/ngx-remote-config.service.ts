@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import * as dot from 'dot-object';
 import { BehaviorSubject, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { NGX_REMOTE_CONFIG } from './ngx-remote-config.config';
 import { INgxRemoteConfig } from './ngx-remote-config.interface';
 
@@ -18,18 +18,32 @@ export class NgxRemoteConfigService<T = any> {
   config$ = new BehaviorSubject<T>(undefined);
   constructor(@Inject(NGX_REMOTE_CONFIG) private _options: INgxRemoteConfig, private _httpClient: HttpClient) {}
   initConfigAsync() {
-    return new Promise(resolve =>
-      this._httpClient
-        .get<T>(this._options.url)
-        .pipe(catchError(error => of((this._options.default || {}) as T)))
-        .subscribe(data => {
+    if (this._options.debug) {
+      console.group('NgxRemoteConfig:Init');
+      console.log('url', this._options.url);
+      console.log('default', this._options.default);
+    }
+    return this._httpClient
+      .get<T>(this._options.url)
+      .pipe(
+        catchError(error => {
+          if (this._options.debug) {
+            console.log('error', error);
+          }
+          return of((this._options.default || {}) as T);
+        }),
+        tap((data: T) => {
+          if (this._options.debug) {
+            console.log('data', data);
+            console.groupEnd();
+          }
           this.config$.next(data);
-          resolve(data);
         })
-    );
+      )
+      .toPromise();
   }
   initConfig() {
-    this.initConfigAsync();
+    this.initConfigAsync().then();
   }
   get(path: string, method = '') {
     let response = null;
@@ -65,10 +79,30 @@ export class NgxRemoteConfigService<T = any> {
     let objectValue;
     objectValue = dot.pick(`${url}.${method}`, config || {});
     if (objectValue !== undefined) {
+      if (this._options.debugMatchUrl) {
+        console.group('NgxRemoteConfig:matchUrl:url+method');
+        console.log('dotConfig', dotConfig);
+        console.log('config', config);
+        console.log('url', url);
+        console.log('method', method);
+        console.log('response', objectValue);
+        console.log('founded', true);
+        console.groupEnd();
+      }
       return { response: objectValue, founded: true };
     }
     objectValue = dot.pick(url, config || {});
     if (objectValue !== undefined) {
+      if (this._options.debugMatchUrl) {
+        console.group('NgxRemoteConfig:matchUrl:url');
+        console.log('dotConfig', dotConfig);
+        console.log('config', config);
+        console.log('url', url);
+        console.log('method', method);
+        console.log('response', objectValue);
+        console.log('founded', true);
+        console.groupEnd();
+      }
       return { response: objectValue, founded: true };
     }
     Object.keys(dotConfig).forEach(dotKey => {
@@ -82,6 +116,16 @@ export class NgxRemoteConfigService<T = any> {
         }
       }
     });
+    if (this._options.debugMatchUrl) {
+      console.group('NgxRemoteConfig:matchUrl');
+      console.log('dotConfig', dotConfig);
+      console.log('config', config);
+      console.log('url', url);
+      console.log('method', method);
+      console.log('response', response);
+      console.log('founded', founded);
+      console.groupEnd();
+    }
     return { response, founded };
   }
 
