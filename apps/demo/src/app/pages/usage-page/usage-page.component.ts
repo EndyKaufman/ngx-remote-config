@@ -176,6 +176,12 @@ mockRestGetResource() {
     error => this.mockRestFail$.next(error)
   );
 }
+mockRestGetWithQueryResource() {
+  this._httpClient.get('/api/resource?page=2&order=id,desc').subscribe(
+    data => this.mockRestSuccess$.next(data),
+    error => this.mockRestFail$.next(error)
+  );
+}
 mockRestPostResource() {
   this._httpClient.post('/api/resource', { name: 'name' }).subscribe(
     data => this.mockRestSuccess$.next(data),
@@ -336,6 +342,18 @@ restDeleteErrorResource() {
   }
   mockRestGetResource() {
     this._httpClient.get('/api/resource').subscribe(
+      data => {
+        this.mockRestSuccess$.next(data);
+        this.mockRestFail$.next(null);
+      },
+      error => {
+        this.mockRestSuccess$.next(null);
+        this.mockRestFail$.next(error);
+      }
+    );
+  }
+  mockRestGetWithQueryResource() {
+    this._httpClient.get('/api/resource?page=2&order=id,desc').subscribe(
       data => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);

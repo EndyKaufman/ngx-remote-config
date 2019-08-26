@@ -27,7 +27,8 @@ import { MyErrorStateMatcher } from './shared/utils/my-error-state-matcher';
     NavbarModule,
     NgxRemoteConfigModule.forRoot({
       url: environment.remoteConfig,
-      notLockAppInitialize: true
+      notLockAppInitialize: true,
+      debug: true
     }),
     RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

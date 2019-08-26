@@ -1,223 +1,172 @@
 <div class="usage-page">
-    <div class="body">
-        <div
-            fxLayout.gt-md="row"
-            fxLayout.lt-md="column">
-            <ngx-docs-example
-                customClass="margin-minus-16"
-                title="Use service"
-                [html]="sources.service.html"
-                [ts]="sources.service.ts"
-                fxFlex.gt-sm="50"
-                fxFlex.lt-sm="100">
-                <div class="body">
-                    <mat-form-field
-                        floatLabel="always"
-                        class="full-width"
-                        appearance="fill">
-                        <mat-label>Config</mat-label>
-                        <textarea
-                            readonly="true"
-                            matInput
-                            cdkTextareaAutosize
-                            cdkAutosizeMinRows="2"
-                            cdkAutosizeMaxRows="10"
-                            [innerHtml]="config$|async|customJson">
-                        </textarea>
-                    </mat-form-field>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="reloadRemoteConfig()">
-                        Reload remote config
-                    </button>
-                </div>
-            </ngx-docs-example>
-            <ngx-docs-example
-                customClass="margin-minus-16"
-                title="Use directive"
-                [html]="sources.directive.html"
-                fxFlex.gt-sm="50"
-                fxFlex.lt-sm="100">
-                <div class="body">
-                    <ng-container *remoteConfig="let config">
-                        <h1>{{config?.options?.name}}</h1>
-                        <h3>{{config?.options?.description}}</h3>
-                        <mat-form-field
-                            floatLabel="always"
-                            class="full-width"
-                            appearance="fill">
-                            <mat-label>Config</mat-label>
-                            <textarea
-                                readonly="true"
-                                matInput
-                                cdkTextareaAutosize
-                                cdkAutosizeMinRows="2"
-                                cdkAutosizeMaxRows="10"
-                                [innerHtml]="config?.options|customJson">
-                            </textarea>
-                        </mat-form-field>
-                    </ng-container>
-                </div>
-            </ngx-docs-example>
+  <div class="body">
+    <div fxLayout.gt-md="row" fxLayout.lt-md="column">
+      <ngx-docs-example
+        customClass="margin-minus-16"
+        title="Use service"
+        [html]="sources.service.html"
+        [ts]="sources.service.ts"
+        fxFlex.gt-sm="50"
+        fxFlex.lt-sm="100"
+      >
+        <div class="body">
+          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+            <mat-label>Config</mat-label>
+            <textarea
+              readonly="true"
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="10"
+              [innerHtml]="config$ | async | customJson"
+            >
+            </textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="reloadRemoteConfig()">
+            Reload remote config
+          </button>
         </div>
-        <div
-            fxLayout.gt-md="row"
-            fxLayout.lt-md="column">
-            <ngx-docs-example
-                customClass="margin-minus-16"
-                title="Use mock REST response"
-                [html]="sources.mockRest.html"
-                [ts]="sources.mockRest.ts"
-                fxFlex.gt-sm="50"
-                fxFlex.lt-sm="100">
-                <div class="body">
-                    <mat-form-field
-                        floatLabel="always"
-                        class="full-width"
-                        appearance="fill">
-                        <mat-label>Success</mat-label>
-                        <textarea
-                            readonly="true"
-                            matInput
-                            cdkTextareaAutosize
-                            cdkAutosizeMinRows="2"
-                            cdkAutosizeMaxRows="10"
-                            [innerHtml]="mockRestSuccess$|async|customJson">
-                        </textarea>
-                    </mat-form-field>
-                    <mat-form-field
-                        floatLabel="always"
-                        class="full-width"
-                        appearance="fill">
-                        <mat-label>Fail</mat-label>
-                        <textarea
-                            readonly="true"
-                            matInput
-                            cdkTextareaAutosize
-                            cdkAutosizeMinRows="2"
-                            cdkAutosizeMaxRows="10"
-                            [innerHtml]="mockRestFail$|async|customJson">
-                        </textarea>
-                    </mat-form-field>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="mockRestGetCustom()">
-                        get: custom
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="mockRestGetOneResource()">
-                        get one: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="mockRestGetResource()">
-                        get: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="mockRestPostResource()">
-                        post: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="mockRestPutResource()">
-                        put: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="mockRestDeleteResource()">
-                        delete: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="mockRestGetOneErrorResource()">
-                        get one: rest error
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="mockRestPutErrorResource()">
-                        put: rest error
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="mockRestDeleteErrorResource()">
-                        delete: rest error
-                    </button>
-                </div>
-            </ngx-docs-example>
-            <ngx-docs-example
-                customClass="margin-minus-16"
-                title="Use real REST response"
-                [html]="sources.realRest.html"
-                [ts]="sources.realRest.ts"
-                fxFlex.gt-sm="50"
-                fxFlex.lt-sm="100">
-                <div class="body">
-                    <mat-form-field
-                        floatLabel="always"
-                        class="full-width"
-                        appearance="fill">
-                        <mat-label>Success</mat-label>
-                        <textarea
-                            readonly="true"
-                            matInput
-                            cdkTextareaAutosize
-                            cdkAutosizeMinRows="2"
-                            cdkAutosizeMaxRows="10"
-                            [innerHtml]="restSuccess$|async|customJson">
-                        </textarea>
-                    </mat-form-field>
-                    <mat-form-field
-                        floatLabel="always"
-                        class="full-width"
-                        appearance="fill">
-                        <mat-label>Fail</mat-label>
-                        <textarea
-                            readonly="true"
-                            matInput
-                            cdkTextareaAutosize
-                            cdkAutosizeMinRows="2"
-                            cdkAutosizeMaxRows="10"
-                            [innerHtml]="restFail$|async|customJson">
-                        </textarea>
-                    </mat-form-field>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="restGetResource()">
-                        get: rest
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="restGetOneErrorResource()">
-                        get one: rest error
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        (click)="restPutErrorResource()">
-                        put: rest error
-                    </button>
-                    <button
-                        mat-raised-button
-                        color="secondary"
-                        (click)="restDeleteErrorResource()">
-                        delete: rest error
-                    </button>
-                </div>
-            </ngx-docs-example>
+      </ngx-docs-example>
+      <ngx-docs-example
+        customClass="margin-minus-16"
+        title="Use directive"
+        [html]="sources.directive.html"
+        fxFlex.gt-sm="50"
+        fxFlex.lt-sm="100"
+      >
+        <div class="body">
+          <ng-container *remoteConfig="let config">
+            <h1>{{ config?.options?.name }}</h1>
+            <h3>{{ config?.options?.description }}</h3>
+            <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+              <mat-label>Config</mat-label>
+              <textarea
+                readonly="true"
+                matInput
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="10"
+                [innerHtml]="config?.options | customJson"
+              >
+              </textarea>
+            </mat-form-field>
+          </ng-container>
         </div>
+      </ngx-docs-example>
     </div>
+    <div fxLayout.gt-md="row" fxLayout.lt-md="column">
+      <ngx-docs-example
+        customClass="margin-minus-16"
+        title="Use mock REST response"
+        [html]="sources.mockRest.html"
+        [ts]="sources.mockRest.ts"
+        fxFlex.gt-sm="50"
+        fxFlex.lt-sm="100"
+      >
+        <div class="body">
+          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+            <mat-label>Success</mat-label>
+            <textarea
+              readonly="true"
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="10"
+              [innerHtml]="mockRestSuccess$ | async | customJson"
+            >
+            </textarea>
+          </mat-form-field>
+          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+            <mat-label>Fail</mat-label>
+            <textarea
+              readonly="true"
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="10"
+              [innerHtml]="mockRestFail$ | async | customJson"
+            >
+            </textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="mockRestGetCustom()">
+            get: custom
+          </button>
+          <button mat-raised-button color="secondary" (click)="mockRestGetOneResource()">
+            get one: rest
+          </button>
+          <button mat-raised-button color="primary" (click)="mockRestGetResource()">
+            get: rest
+          </button>
+          <button mat-raised-button color="primary" (click)="mockRestGetWithQueryResource()">
+            get: rest with query
+          </button>
+          <button mat-raised-button color="secondary" (click)="mockRestPostResource()">
+            post: rest
+          </button>
+          <button mat-raised-button color="primary" (click)="mockRestPutResource()">
+            put: rest
+          </button>
+          <button mat-raised-button color="secondary" (click)="mockRestDeleteResource()">
+            delete: rest
+          </button>
+          <button mat-raised-button color="primary" (click)="mockRestGetOneErrorResource()">
+            get one: rest error
+          </button>
+          <button mat-raised-button color="secondary" (click)="mockRestPutErrorResource()">
+            put: rest error
+          </button>
+          <button mat-raised-button color="primary" (click)="mockRestDeleteErrorResource()">
+            delete: rest error
+          </button>
+        </div>
+      </ngx-docs-example>
+      <ngx-docs-example
+        customClass="margin-minus-16"
+        title="Use real REST response"
+        [html]="sources.realRest.html"
+        [ts]="sources.realRest.ts"
+        fxFlex.gt-sm="50"
+        fxFlex.lt-sm="100"
+      >
+        <div class="body">
+          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+            <mat-label>Success</mat-label>
+            <textarea
+              readonly="true"
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="10"
+              [innerHtml]="restSuccess$ | async | customJson"
+            >
+            </textarea>
+          </mat-form-field>
+          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+            <mat-label>Fail</mat-label>
+            <textarea
+              readonly="true"
+              matInput
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="10"
+              [innerHtml]="restFail$ | async | customJson"
+            >
+            </textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="restGetResource()">
+            get: rest
+          </button>
+          <button mat-raised-button color="secondary" (click)="restGetOneErrorResource()">
+            get one: rest error
+          </button>
+          <button mat-raised-button color="primary" (click)="restPutErrorResource()">
+            put: rest error
+          </button>
+          <button mat-raised-button color="secondary" (click)="restDeleteErrorResource()">
+            delete: rest error
+          </button>
+        </div>
+      </ngx-docs-example>
+    </div>
+  </div>
 </div>
