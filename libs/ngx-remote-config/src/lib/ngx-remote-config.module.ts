@@ -23,6 +23,11 @@ export class NgxRemoteConfigModule {
           provide: NGX_REMOTE_CONFIG,
           useValue: {
             url: options && options.url !== undefined ? options.url : DEFAULT_NGX_REMOTE_CONFIG.url,
+            debug: options && options.debug !== undefined ? options.debug : DEFAULT_NGX_REMOTE_CONFIG.debug,
+            debugMatchUrl:
+              options && options.debugMatchUrl !== undefined
+                ? options.debugMatchUrl
+                : DEFAULT_NGX_REMOTE_CONFIG.debugMatchUrl,
             withoutIterceptor:
               options && options.withoutIterceptor !== undefined
                 ? options.withoutIterceptor

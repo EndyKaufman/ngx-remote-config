@@ -1,0 +1,16 @@
+<ng-container *remoteConfig="let config">
+  <h1>{{ config?.options?.name }}</h1>
+  <h3>{{ config?.options?.description }}</h3>
+  <mat-form-field floatLabel="always" class="full-width" appearance="fill">
+    <mat-label>Config</mat-label>
+    <textarea
+      readonly="true"
+      matInput
+      cdkTextareaAutosize
+      cdkAutosizeMinRows="2"
+      cdkAutosizeMaxRows="10"
+      [innerHtml]="config?.options | customJson"
+    >
+    </textarea>
+  </mat-form-field>
+</ng-container>

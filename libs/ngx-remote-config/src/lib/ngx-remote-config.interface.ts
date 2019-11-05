@@ -4,4 +4,6 @@ export interface INgxRemoteConfig {
   withoutIterceptor?: boolean;
   withoutAppInitialize?: boolean;
   notLockAppInitialize?: boolean;
+  debug?: boolean;
+  debugMatchUrl?: boolean;
 }

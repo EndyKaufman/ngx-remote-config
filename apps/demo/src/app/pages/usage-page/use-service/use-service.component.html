@@ -1,0 +1,15 @@
+<mat-form-field floatLabel="always" class="full-width" appearance="fill">
+  <mat-label>Config</mat-label>
+  <textarea
+    readonly="true"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [innerHtml]="config$ | async | customJson"
+  >
+  </textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="reloadRemoteConfig()">
+  Reload remote config
+</button>

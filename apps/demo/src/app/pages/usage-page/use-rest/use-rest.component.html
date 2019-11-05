@@ -1,0 +1,39 @@
+<mat-form-field floatLabel="always" class="full-width" appearance="fill">
+  <mat-label>Success</mat-label>
+  <textarea
+    readonly="true"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [innerHtml]="restSuccess$ | async | customJson"
+  >
+  </textarea>
+</mat-form-field>
+<mat-form-field floatLabel="always" class="full-width" appearance="fill">
+  <mat-label>Fail</mat-label>
+  <textarea
+    readonly="true"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [innerHtml]="restFail$ | async | customJson"
+  >
+  </textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="restGetResource()">
+  get: rest
+</button>
+<button mat-raised-button color="primary" (click)="restGetOneResource()">
+  get one: rest
+</button>
+<button mat-raised-button color="primary" (click)="restGetOneErrorResource()">
+  get one: rest error
+</button>
+<button mat-raised-button color="secondary" (click)="restPutErrorResource()">
+  put: rest error
+</button>
+<button mat-raised-button color="secondary" (click)="restDeleteErrorResource()">
+  delete: rest error
+</button>

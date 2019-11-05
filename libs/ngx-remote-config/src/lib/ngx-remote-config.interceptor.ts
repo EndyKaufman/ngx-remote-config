@@ -26,6 +26,13 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
         const requestWithCustomUrl = request.clone({
           url: response
         });
+        if (this._options.debug) {
+          console.group('NgxRemoteConfig:UrlReplace');
+          console.log('url', request.url);
+          console.log('method', request.method);
+          console.log('request', requestWithCustomUrl);
+          console.groupEnd();
+        }
         return next.handle(requestWithCustomUrl);
       }
       if (
@@ -33,32 +40,50 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
         (!response || (response && response.body === undefined && response.status === undefined))
       ) {
         return new Observable(observer => {
-          observer.next(
-            new HttpResponse<any>({
-              body: response
-            })
-          );
+          const httpResponse = new HttpResponse<any>({
+            body: response
+          });
+          if (this._options.debug) {
+            console.group('NgxRemoteConfig:BodyReplace');
+            console.log('url', request.url);
+            console.log('method', request.method);
+            console.log('response', httpResponse);
+            console.groupEnd();
+          }
+          observer.next(httpResponse);
           observer.complete();
         });
       }
       if (response !== undefined && response.body !== undefined && response.status !== undefined) {
         return new Observable(observer => {
           if (+response.status >= 400) {
-            observer.error(
-              new HttpErrorResponse({
-                error: response.body,
-                ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
-                status: response.status
-              })
-            );
+            const httpResponse = new HttpErrorResponse({
+              error: response.body,
+              ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
+              status: response.status
+            });
+            if (this._options.debug) {
+              console.group('NgxRemoteConfig:ErrorResponseReplace');
+              console.log('url', request.url);
+              console.log('method', request.method);
+              console.log('response', httpResponse);
+              console.groupEnd();
+            }
+            observer.error(httpResponse);
           } else {
-            observer.next(
-              new HttpResponse<any>({
-                body: response.body,
-                ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
-                status: response.status
-              })
-            );
+            const httpResponse = new HttpResponse<any>({
+              body: response.body,
+              ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
+              status: response.status
+            });
+            if (this._options.debug) {
+              console.group('NgxRemoteConfig:ResponseReplace');
+              console.log('url', request.url);
+              console.log('method', request.method);
+              console.log('response', httpResponse);
+              console.groupEnd();
+            }
+            observer.next(httpResponse);
           }
           observer.complete();
         });
