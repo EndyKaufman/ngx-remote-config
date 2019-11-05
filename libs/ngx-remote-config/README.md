@@ -2,8 +2,7 @@
 [![Build Status](https://travis-ci.org/EndyKaufman/ngx-remote-config.svg?branch=master)](https://travis-ci.org/EndyKaufman/ngx-remote-config)
 [![npm version](https://badge.fury.io/js/ngx-remote-config.svg)](https://badge.fury.io/js/ngx-remote-config)
 
-
-Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api
+Remote configurations for Angular8+ applications, with built-in interceptor for mock REST data and non-permanent api
 
 ## Installation
 
@@ -23,11 +22,11 @@ npm i --save ngx-remote-config
 
 [path-to-regexp](https://github.com/pillarjs/path-to-regexp) - Library usage for match url on interceptor
 
-
 # Usage
 
 app.module.ts
-```js 
+
+```js
 import { HttpClientModule } from '@angular/common/http';
 import { NgxRemoteConfigModule } from 'ngx-remote-config';
 
@@ -46,6 +45,7 @@ export class AppModule {}
 ```
 
 app.component.html
+
 ```html
 ...
 <p>Load with directive</p>
@@ -60,6 +60,7 @@ app.component.html
 ```
 
 app.component.ts
+
 ```js
 import { NgxRemoteConfigService } from 'ngx-remote-config';
 import { Observable } from 'rxjs';
@@ -74,6 +75,7 @@ constructor(
 ```
 
 settings.json (https://testapi.io/api/EndyKaufman/ngx-remote-config.json)
+
 ```js
 {
   "options":{
