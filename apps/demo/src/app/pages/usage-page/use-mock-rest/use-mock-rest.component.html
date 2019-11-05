@@ -1,0 +1,54 @@
+<mat-form-field floatLabel="always" class="full-width" appearance="fill">
+  <mat-label>Success</mat-label>
+  <textarea
+    readonly="true"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [innerHtml]="mockRestSuccess$ | async | customJson"
+  >
+  </textarea>
+</mat-form-field>
+<mat-form-field floatLabel="always" class="full-width" appearance="fill">
+  <mat-label>Fail</mat-label>
+  <textarea
+    readonly="true"
+    matInput
+    cdkTextareaAutosize
+    cdkAutosizeMinRows="2"
+    cdkAutosizeMaxRows="10"
+    [innerHtml]="mockRestFail$ | async | customJson"
+  >
+  </textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="mockRestGetCustom()">
+  get: custom
+</button>
+<button mat-raised-button color="primary" (click)="mockRestGetOneResource()">
+  get one: rest
+</button>
+<button mat-raised-button color="primary" (click)="mockRestGetResource()">
+  get: rest
+</button>
+<button mat-raised-button color="primary" (click)="mockRestGetWithQueryResource()">
+  get: rest with query
+</button>
+<button mat-raised-button color="primary" (click)="mockRestGetOneErrorResource()">
+  get one: rest error
+</button>
+<button mat-raised-button color="secondary" (click)="mockRestPostResource()">
+  post: rest
+</button>
+<button mat-raised-button color="secondary" (click)="mockRestPutResource()">
+  put: rest
+</button>
+<button mat-raised-button color="secondary" (click)="mockRestDeleteResource()">
+  delete: rest
+</button>
+<button mat-raised-button color="secondary" (click)="mockRestPutErrorResource()">
+  put: rest error
+</button>
+<button mat-raised-button color="secondary" (click)="mockRestDeleteErrorResource()">
+  delete: rest error
+</button>

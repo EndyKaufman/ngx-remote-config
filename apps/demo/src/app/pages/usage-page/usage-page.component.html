@@ -10,21 +10,7 @@
         fxFlex.lt-sm="100"
       >
         <div class="body">
-          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-            <mat-label>Config</mat-label>
-            <textarea
-              readonly="true"
-              matInput
-              cdkTextareaAutosize
-              cdkAutosizeMinRows="2"
-              cdkAutosizeMaxRows="10"
-              [innerHtml]="config$ | async | customJson"
-            >
-            </textarea>
-          </mat-form-field>
-          <button mat-raised-button color="primary" (click)="reloadRemoteConfig()">
-            Reload remote config
-          </button>
+          <use-service></use-service>
         </div>
       </ngx-docs-example>
       <ngx-docs-example
@@ -35,22 +21,7 @@
         fxFlex.lt-sm="100"
       >
         <div class="body">
-          <ng-container *remoteConfig="let config">
-            <h1>{{ config?.options?.name }}</h1>
-            <h3>{{ config?.options?.description }}</h3>
-            <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-              <mat-label>Config</mat-label>
-              <textarea
-                readonly="true"
-                matInput
-                cdkTextareaAutosize
-                cdkAutosizeMinRows="2"
-                cdkAutosizeMaxRows="10"
-                [innerHtml]="config?.options | customJson"
-              >
-              </textarea>
-            </mat-form-field>
-          </ng-container>
+          <use-directive></use-directive>
         </div>
       </ngx-docs-example>
     </div>
@@ -64,60 +35,7 @@
         fxFlex.lt-sm="100"
       >
         <div class="body">
-          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-            <mat-label>Success</mat-label>
-            <textarea
-              readonly="true"
-              matInput
-              cdkTextareaAutosize
-              cdkAutosizeMinRows="2"
-              cdkAutosizeMaxRows="10"
-              [innerHtml]="mockRestSuccess$ | async | customJson"
-            >
-            </textarea>
-          </mat-form-field>
-          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-            <mat-label>Fail</mat-label>
-            <textarea
-              readonly="true"
-              matInput
-              cdkTextareaAutosize
-              cdkAutosizeMinRows="2"
-              cdkAutosizeMaxRows="10"
-              [innerHtml]="mockRestFail$ | async | customJson"
-            >
-            </textarea>
-          </mat-form-field>
-          <button mat-raised-button color="primary" (click)="mockRestGetCustom()">
-            get: custom
-          </button>
-          <button mat-raised-button color="secondary" (click)="mockRestGetOneResource()">
-            get one: rest
-          </button>
-          <button mat-raised-button color="primary" (click)="mockRestGetResource()">
-            get: rest
-          </button>
-          <button mat-raised-button color="primary" (click)="mockRestGetWithQueryResource()">
-            get: rest with query
-          </button>
-          <button mat-raised-button color="secondary" (click)="mockRestPostResource()">
-            post: rest
-          </button>
-          <button mat-raised-button color="primary" (click)="mockRestPutResource()">
-            put: rest
-          </button>
-          <button mat-raised-button color="secondary" (click)="mockRestDeleteResource()">
-            delete: rest
-          </button>
-          <button mat-raised-button color="primary" (click)="mockRestGetOneErrorResource()">
-            get one: rest error
-          </button>
-          <button mat-raised-button color="secondary" (click)="mockRestPutErrorResource()">
-            put: rest error
-          </button>
-          <button mat-raised-button color="primary" (click)="mockRestDeleteErrorResource()">
-            delete: rest error
-          </button>
+          <use-mock-rest></use-mock-rest>
         </div>
       </ngx-docs-example>
       <ngx-docs-example
@@ -129,42 +47,7 @@
         fxFlex.lt-sm="100"
       >
         <div class="body">
-          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-            <mat-label>Success</mat-label>
-            <textarea
-              readonly="true"
-              matInput
-              cdkTextareaAutosize
-              cdkAutosizeMinRows="2"
-              cdkAutosizeMaxRows="10"
-              [innerHtml]="restSuccess$ | async | customJson"
-            >
-            </textarea>
-          </mat-form-field>
-          <mat-form-field floatLabel="always" class="full-width" appearance="fill">
-            <mat-label>Fail</mat-label>
-            <textarea
-              readonly="true"
-              matInput
-              cdkTextareaAutosize
-              cdkAutosizeMinRows="2"
-              cdkAutosizeMaxRows="10"
-              [innerHtml]="restFail$ | async | customJson"
-            >
-            </textarea>
-          </mat-form-field>
-          <button mat-raised-button color="primary" (click)="restGetResource()">
-            get: rest
-          </button>
-          <button mat-raised-button color="secondary" (click)="restGetOneErrorResource()">
-            get one: rest error
-          </button>
-          <button mat-raised-button color="primary" (click)="restPutErrorResource()">
-            put: rest error
-          </button>
-          <button mat-raised-button color="secondary" (click)="restDeleteErrorResource()">
-            delete: rest error
-          </button>
+          <use-rest></use-rest>
         </div>
       </ngx-docs-example>
     </div>

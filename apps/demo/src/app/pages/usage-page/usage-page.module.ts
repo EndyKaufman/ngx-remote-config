@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgxRemoteConfigModule } from 'ngx-remote-config';
 import { DocsExampleModule } from '../../components/docs-example/docs-example.module';
 import { SourceTabsModule } from '../../components/source-tabs/source-tabs.module';
 import { SharedModule } from '../../shared/shared.module';
 import { UsagePageComponent } from './usage-page.component';
 import { UsagePageRoutes } from './usage-page.routes';
-import { MatButtonModule } from '@angular/material/button';
+import { UseDirectiveModule } from './use-directive/use-directive.module';
+import { UseMockRestModule } from './use-mock-rest/use-mock-rest.module';
+import { UseRestModule } from './use-rest/use-rest.module';
+import { UseServiceModule } from './use-service/use-service.module';
 @NgModule({
   imports: [
     SharedModule,
@@ -17,10 +18,11 @@ import { MatButtonModule } from '@angular/material/button';
     MarkdownModule.forRoot(),
     DocsExampleModule.forRoot(),
     SourceTabsModule,
-    NgxRemoteConfigModule,
     FlexLayoutModule,
-    MatInputModule,
-    MatButtonModule
+    UseServiceModule,
+    UseDirectiveModule,
+    UseMockRestModule,
+    UseRestModule
   ],
   declarations: [UsagePageComponent]
 })
