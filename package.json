@@ -85,7 +85,7 @@
     "dot-object": "^2.1.2",
     "lodash-es": "^4.17.15",
     "ngx-markdown": "^8.2.1",
-    "path-to-regexp": "^3.1.0",
+    "path-to-regexp": "^6.1.0",
     "prismjs": "^1.17.1",
     "raw-loader": "^0.5.1",
     "rxjs": "~6.4.0",
