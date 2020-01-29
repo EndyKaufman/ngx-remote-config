@@ -100,7 +100,7 @@
     "@rucken/cli": "^4.1.5",
     "@types/jasmine": "~3.4.5",
     "@types/jasminewd2": "~2.0.8",
-    "@types/node": "~12.12.5",
+    "@types/node": "~13.5.2",
     "codelyzer": "~5.2.0",
     "conventional-changelog-cli": "^2.0.25",
     "conventional-commits-detector": "^1.0.2",
