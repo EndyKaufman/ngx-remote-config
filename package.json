@@ -73,7 +73,7 @@
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "^8.2.13",
     "@angular/platform-browser-dynamic": "^8.2.13",
-    "@angular/pwa": "^0.803.17",
+    "@angular/pwa": "^0.900.1",
     "@angular/router": "^8.2.13",
     "@angular/service-worker": "^8.2.13",
     "@ngx-prism/core": "^2.0.1",
