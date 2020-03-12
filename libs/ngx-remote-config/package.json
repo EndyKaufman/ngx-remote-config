@@ -13,7 +13,7 @@
     "rest",
     "api",
     "directives",
-    "angular8",
+    "angular9",
     "ng8"
   ],
   "license": "MIT",
@@ -37,13 +37,13 @@
     }
   ],
   "peerDependencies": {
-    "rxjs": "~6.4.0",
-    "@angular/common": "^8.2.13",
-    "@angular/compiler": "^8.2.13",
-    "@angular/core": "^8.2.13"
+    "rxjs": "~6.5.4",
+    "@angular/common": "^9.0.6",
+    "@angular/compiler": "^9.0.6",
+    "@angular/core": "^9.0.6"
   },
   "dependencies": {
-    "path-to-regexp": "^3.1.0",
-    "dot-object": "^2.1.2"
+    "path-to-regexp": "^6.1.0",
+    "dot-object": "^2.1.3"
   }
 }
