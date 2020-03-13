@@ -1,7 +1,7 @@
 {
   "name": "ngx-remote-config",
-  "version": "1.0.0",
-  "description": "Remote configurations for Angular7+ applications, with built-in interceptor for mock REST data and non-permanent api",
+  "version": "1.1.0",
+  "description": "Remote configurations for Angular9+ applications, with built-in interceptor for mock REST data and non-permanent api",
   "keywords": [
     "angular",
     "ng",
@@ -13,28 +13,13 @@
     "rest",
     "api",
     "directives",
-    "angular2",
-    "angular 2",
-    "angular4",
-    "angular 4",
-    "angular5",
-    "angular 5",
-    "angular6",
-    "angular 6",
-    "angular7",
-    "angular 7",
-    "angularx",
-    "angular-x",
-    "ng2",
-    "ng4",
-    "ng5",
-    "ng6",
-    "ng7"
+    "angular9",
+    "ng8"
   ],
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
   "engines": {
-    "node": ">=10",
+    "node": ">=12",
     "npm": ">=6.4.0"
   },
   "bugs": {
@@ -52,13 +37,13 @@
     }
   ],
   "peerDependencies": {
-    "rxjs": "~6.4.0",
-    "@angular/common": "^8.2.13",
-    "@angular/compiler": "^8.2.13",
-    "@angular/core": "^8.2.13"
+    "rxjs": "~6.5.4",
+    "@angular/common": "^9.0.6",
+    "@angular/compiler": "^9.0.6",
+    "@angular/core": "^9.0.6"
   },
   "dependencies": {
-    "path-to-regexp": "^3.1.0",
-    "dot-object": "^2.1.2"
+    "path-to-regexp": "^6.1.0",
+    "dot-object": "^2.1.3"
   }
 }

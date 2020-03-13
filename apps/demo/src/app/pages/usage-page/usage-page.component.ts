@@ -8,20 +8,20 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class UsagePageComponent {
   sources = {
     directive: {
-      html: require('!!raw-loader?lang=html!./use-directive/use-directive.component.html'),
-      ts: require('!!raw-loader?lang=typescript!./use-directive/use-directive.component.ts')
+      html: require('!!raw-loader!./use-directive/use-directive.component.html').default,
+      ts: require('!!raw-loader!./use-directive/use-directive.component.ts').default
     },
     service: {
-      html: require('!!raw-loader?lang=html!./use-service/use-service.component.html'),
-      ts: require('!!raw-loader?lang=typescript!./use-service/use-service.component.ts')
+      html: require('!!raw-loader!./use-service/use-service.component.html').default,
+      ts: require('!!raw-loader!./use-service/use-service.component.ts').default
     },
     mockRest: {
-      html: require('!!raw-loader?lang=html!./use-mock-rest/use-mock-rest.component.html'),
-      ts: require('!!raw-loader?lang=typescript!./use-mock-rest/use-mock-rest.component.ts')
+      html: require('!!raw-loader!./use-mock-rest/use-mock-rest.component.html').default,
+      ts: require('!!raw-loader!./use-mock-rest/use-mock-rest.component.ts').default
     },
     realRest: {
-      html: require('!!raw-loader?lang=html!./use-rest/use-rest.component.html'),
-      ts: require('!!raw-loader?lang=typescript!./use-rest/use-rest.component.ts')
+      html: require('!!raw-loader!./use-rest/use-rest.component.html').default,
+      ts: require('!!raw-loader!./use-rest/use-rest.component.ts').default
     }
   };
 }
