@@ -6,10 +6,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent {
-  readme = require('!!raw-loader?lang=markdown!../../../../../../README.md').replace('# ngx-remote-config', '');
+  readme = require('!!raw-loader!../../../../../../README.md').default.replace('# ngx-remote-config', '');
 
   source = {
-    html: require('!!raw-loader?lang=html!./home-page.component.html.txt'),
-    ts: require('!!raw-loader?lang=typescript!./home-page.component.ts.txt')
+    html: require('!!raw-loader!./home-page.component.html.txt').default,
+    ts: require('!!raw-loader!./home-page.component.ts.txt').default
   };
 }
