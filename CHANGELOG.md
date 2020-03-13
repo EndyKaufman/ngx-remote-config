@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/EndyKaufman/ngx-remote-config/compare/1.0.0...1.1.0) (2020-03-12)
+
+
+### Features
+
+* update dependencies ([04d5157](https://github.com/EndyKaufman/ngx-remote-config/commit/04d5157d6f50e8c87a135ea80354a29207014a4b))
+
+
+
 # [1.0.0](https://github.com/EndyKaufman/ngx-remote-config/compare/0.0.5...1.0.0) (2019-11-05)
 
 ### Features

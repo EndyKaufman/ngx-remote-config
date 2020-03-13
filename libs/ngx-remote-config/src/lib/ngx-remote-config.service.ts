@@ -1,13 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import * as dot from 'dot-object';
+import { pathToRegexp } from 'path-to-regexp';
 import { BehaviorSubject, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { NGX_REMOTE_CONFIG } from './ngx-remote-config.config';
 import { INgxRemoteConfig } from './ngx-remote-config.interface';
-
-declare var require: any;
-const pathToRegexp = require('path-to-regexp');
 
 export function initializeApp(ngxRemoteConfigService: NgxRemoteConfigService) {
   return () => ngxRemoteConfigService.initConfigAsync();
@@ -53,17 +51,20 @@ export class NgxRemoteConfigService<T = any> {
     const isHttp = path.indexOf('http://') !== 0;
     const isHttps = path.indexOf('https://') !== 0;
     const domain = isHttp || isHttps ? path.replace('http://', '').replace('https://', '') : path;
-
     if (!founded) {
-      const url = [domain].join('.').replace(/(^\.+|\.+$)/gm, '');
-      ({ response, founded } = this.matchUrl(dotConfig, config, url, method.toLowerCase(), response, founded));
+      try {
+        const url = [domain].join('.').replace(/(^\.+|\.+$)/gm, '');
+        ({ response, founded } = this.matchUrl(dotConfig, config, url, method.toLowerCase(), response, founded));
+      } catch (error) {}
     }
     if (!founded) {
-      const url = [...domain.split('/')]
-        .filter(i => i)
-        .join('.')
-        .replace(/(^\.+|\.+$)/gm, '');
-      ({ response, founded } = this.matchUrl(dotConfig, config, url, method.toLowerCase(), response, founded));
+      try {
+        const url = [...domain.split('/')]
+          .filter(i => i)
+          .join('.')
+          .replace(/(^\.+|\.+$)/gm, '');
+        ({ response, founded } = this.matchUrl(dotConfig, config, url, method.toLowerCase(), response, founded));
+      } catch (error) {}
     }
     if (founded) {
       if (typeof response === 'string') {

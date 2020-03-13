@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule, MatInputModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { NgxRemoteConfigModule } from 'ngx-remote-config';
 import { SharedModule } from '../../../shared/shared.module';
 import { UseDirectiveComponent } from './use-directive.component';
