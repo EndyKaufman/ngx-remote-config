@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/EndyKaufman/ngx-remote-config/compare/1.1.0...1.2.0) (2020-05-25)
+
+
+### Bug Fixes
+
+* update for correct parse keys with url string ([465f66b](https://github.com/EndyKaufman/ngx-remote-config/commit/465f66b2b0c9bd6daecd7e521bf9ed05b5dbfa44))
+
+
+### Features
+
+* update deps and sources for it ([561c100](https://github.com/EndyKaufman/ngx-remote-config/commit/561c100d55cfaf7948c750aca57faed4b61b41f7))
+
+
+
 # [1.1.0](https://github.com/EndyKaufman/ngx-remote-config/compare/1.0.0...1.1.0) (2020-03-12)
 
 
