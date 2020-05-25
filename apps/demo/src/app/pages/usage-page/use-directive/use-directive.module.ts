@@ -8,6 +8,6 @@ import { UseDirectiveComponent } from './use-directive.component';
 @NgModule({
   imports: [SharedModule, NgxRemoteConfigModule, MatInputModule, MatButtonModule],
   declarations: [UseDirectiveComponent],
-  exports: [UseDirectiveComponent]
+  exports: [UseDirectiveComponent],
 })
 export class UseDirectiveModule {}

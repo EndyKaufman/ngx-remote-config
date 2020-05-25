@@ -6,7 +6,7 @@ import { IEnvironment } from './environment.interface';
 
 export const environment: IEnvironment = {
   production: false,
-  remoteConfig: 'https://testapi.io/api/EndyKaufman/ngx-remote-config.json'
+  remoteConfig: 'https://testapi.io/api/EndyKaufman/ngx-remote-config.json',
 };
 
 /*

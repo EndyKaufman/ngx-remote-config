@@ -1,6 +1,5 @@
 # ngx-remote-config
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/EndyKaufman/ngx-remote-config.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/EndyKaufman/ngx-remote-config.svg?branch=master)](https://travis-ci.org/EndyKaufman/ngx-remote-config)
 [![npm version](https://badge.fury.io/js/ngx-remote-config.svg)](https://badge.fury.io/js/ngx-remote-config)
 

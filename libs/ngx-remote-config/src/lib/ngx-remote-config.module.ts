@@ -10,7 +10,7 @@ import { initializeApp, NgxRemoteConfigService } from './ngx-remote-config.servi
 @NgModule({
   imports: [CommonModule],
   declarations: [NgxRemoteConfigDirective],
-  exports: [NgxRemoteConfigDirective]
+  exports: [NgxRemoteConfigDirective],
 })
 export class NgxRemoteConfigModule {
   static forRoot(options?: INgxRemoteConfig): ModuleWithProviders {
@@ -35,8 +35,8 @@ export class NgxRemoteConfigModule {
             notLockAppInitialize:
               options && options.notLockAppInitialize !== undefined
                 ? options.notLockAppInitialize
-                : DEFAULT_NGX_REMOTE_CONFIG.notLockAppInitialize
-          }
+                : DEFAULT_NGX_REMOTE_CONFIG.notLockAppInitialize,
+          },
         },
         ...(options.withoutAppInitialize
           ? []
@@ -45,15 +45,15 @@ export class NgxRemoteConfigModule {
                 provide: APP_INITIALIZER,
                 useFactory: initializeApp,
                 multi: true,
-                deps: [NgxRemoteConfigService]
-              }
+                deps: [NgxRemoteConfigService],
+              },
             ]),
         {
           provide: HTTP_INTERCEPTORS,
           useExisting: NgxRemoteConfigInterceptor,
-          multi: true
-        }
-      ]
+          multi: true,
+        },
+      ],
     };
   }
 }

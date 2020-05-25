@@ -22,8 +22,8 @@ import { UseServiceModule } from './use-service/use-service.module';
     UseServiceModule,
     UseDirectiveModule,
     UseMockRestModule,
-    UseRestModule
+    UseRestModule,
   ],
-  declarations: [UsagePageComponent]
+  declarations: [UsagePageComponent],
 })
 export class UsagePageModule {}

@@ -5,7 +5,7 @@ import {
   HttpHeaders,
   HttpInterceptor,
   HttpRequest,
-  HttpResponse
+  HttpResponse,
 } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -24,7 +24,7 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
       const response = this._ngxRemoteConfigService.get(request.url, request.method);
       if (response !== undefined && typeof response === 'string') {
         const requestWithCustomUrl = request.clone({
-          url: response
+          url: response,
         });
         if (this._options.debug) {
           console.group('NgxRemoteConfig:UrlReplace');
@@ -39,9 +39,9 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
         response !== undefined &&
         (!response || (response && response.body === undefined && response.status === undefined))
       ) {
-        return new Observable(observer => {
+        return new Observable((observer) => {
           const httpResponse = new HttpResponse<any>({
-            body: response
+            body: response,
           });
           if (this._options.debug) {
             console.group('NgxRemoteConfig:BodyReplace');
@@ -55,12 +55,12 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
         });
       }
       if (response !== undefined && response.body !== undefined && response.status !== undefined) {
-        return new Observable(observer => {
+        return new Observable((observer) => {
           if (+response.status >= 400) {
             const httpResponse = new HttpErrorResponse({
               error: response.body,
               ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
-              status: response.status
+              status: response.status,
             });
             if (this._options.debug) {
               console.group('NgxRemoteConfig:ErrorResponseReplace');
@@ -74,7 +74,7 @@ export class NgxRemoteConfigInterceptor implements HttpInterceptor {
             const httpResponse = new HttpResponse<any>({
               body: response.body,
               ...(response.headers ? { headers: new HttpHeaders(response.headers) } : {}),
-              status: response.status
+              status: response.status,
             });
             if (this._options.debug) {
               console.group('NgxRemoteConfig:ResponseReplace');
