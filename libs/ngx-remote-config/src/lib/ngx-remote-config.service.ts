@@ -24,7 +24,7 @@ export class NgxRemoteConfigService<T = any> {
     return this._httpClient
       .get<T>(this._options.url)
       .pipe(
-        catchError(error => {
+        catchError((error) => {
           if (this._options.debug) {
             console.log('error', error);
           }
@@ -60,7 +60,7 @@ export class NgxRemoteConfigService<T = any> {
     if (!founded) {
       try {
         const url = [...domain.split('/')]
-          .filter(i => i)
+          .filter((i) => i)
           .join('.')
           .replace(/(^\.+|\.+$)/gm, '');
         ({ response, founded } = this.matchUrl(dotConfig, config, url, method.toLowerCase(), response, founded));
@@ -106,17 +106,23 @@ export class NgxRemoteConfigService<T = any> {
       }
       return { response: objectValue, founded: true };
     }
-    Object.keys(dotConfig).forEach(dotKey => {
-      const regexp = pathToRegexp(dotKey);
-      const value = dotConfig[dotKey];
-      const matched = regexp.exec(url);
-      if (value !== undefined && matched && !founded) {
-        if (response !== undefined) {
-          response = value + matched[1];
-          founded = true;
+    const dotConfigKeys = Object.getOwnPropertyNames(dotConfig).reverse();
+    const dotConfigKeysLength = dotConfigKeys.length;
+    let dotKey;
+    for (let i = 0; i < dotConfigKeysLength; i++) {
+      if (!founded) {
+        dotKey = dotConfigKeys[i];
+        const regexp = pathToRegexp(dotKey);
+        const value = dotConfig[dotKey];
+        const matched = regexp.exec(url);
+        if (value !== undefined && matched) {
+          if (response !== undefined) {
+            response = value + matched[1];
+            founded = true;
+          }
         }
       }
-    });
+    }
     if (this._options.debugMatchUrl) {
       console.group('NgxRemoteConfig:matchUrl');
       console.log('dotConfig', dotConfig);
