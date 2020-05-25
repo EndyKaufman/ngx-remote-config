@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'use-mock-rest',
   templateUrl: './use-mock-rest.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UseMockRestComponent {
   mockRestSuccess$ = new Subject<any>();
@@ -13,11 +13,11 @@ export class UseMockRestComponent {
   constructor(private _httpClient: HttpClient) {}
   mockRestGetCustom() {
     this._httpClient.get('/api/action').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -25,11 +25,11 @@ export class UseMockRestComponent {
   }
   mockRestGetOneResource() {
     this._httpClient.get('/api/resource/1').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -37,11 +37,11 @@ export class UseMockRestComponent {
   }
   mockRestGetResource() {
     this._httpClient.get('/api/resource').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -49,11 +49,11 @@ export class UseMockRestComponent {
   }
   mockRestGetWithQueryResource() {
     this._httpClient.get('/api/resource?page=2&order=id,desc').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -61,11 +61,11 @@ export class UseMockRestComponent {
   }
   mockRestPostResource() {
     this._httpClient.post('/api/resource', { name: 'name' }).subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -73,11 +73,11 @@ export class UseMockRestComponent {
   }
   mockRestPutResource() {
     this._httpClient.put('/api/resource/1', { name: 'name' }).subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -85,11 +85,11 @@ export class UseMockRestComponent {
   }
   mockRestDeleteResource() {
     this._httpClient.delete('/api/resource/1').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -97,11 +97,11 @@ export class UseMockRestComponent {
   }
   mockRestGetOneErrorResource() {
     this._httpClient.get('/api/resource/2').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -109,11 +109,11 @@ export class UseMockRestComponent {
   }
   mockRestPutErrorResource() {
     this._httpClient.put('/api/resource/2', { name: 'name' }).subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }
@@ -121,11 +121,11 @@ export class UseMockRestComponent {
   }
   mockRestDeleteErrorResource() {
     this._httpClient.delete('/api/resource/2').subscribe(
-      data => {
+      (data) => {
         this.mockRestSuccess$.next(data);
         this.mockRestFail$.next(null);
       },
-      error => {
+      (error) => {
         this.mockRestSuccess$.next(null);
         this.mockRestFail$.next(error);
       }

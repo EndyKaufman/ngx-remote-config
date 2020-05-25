@@ -8,6 +8,6 @@ import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   imports: [SharedModule, NgxRemoteConfigModule, MatInputModule, MatButtonModule],
   declarations: [UseRestComponent],
-  exports: [UseRestComponent]
+  exports: [UseRestComponent],
 })
 export class UseRestModule {}

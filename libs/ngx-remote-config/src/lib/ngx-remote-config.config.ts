@@ -5,6 +5,6 @@ export const DEFAULT_NGX_REMOTE_CONFIG: INgxRemoteConfig = {
   withoutIterceptor: false,
   notLockAppInitialize: false,
   debug: false,
-  debugMatchUrl: false
+  debugMatchUrl: false,
 };
 export const NGX_REMOTE_CONFIG = 'NgxRemoteConfig';

@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'customJson'
+  name: 'customJson',
 })
 export class CustomJsonPipe implements PipeTransform {
   transform(value: any, args?: any): any {

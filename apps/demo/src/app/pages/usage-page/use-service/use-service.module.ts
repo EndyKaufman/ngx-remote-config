@@ -8,6 +8,6 @@ import { UseServiceComponent } from './use-service.component';
 @NgModule({
   imports: [SharedModule, NgxRemoteConfigModule, MatInputModule, MatButtonModule],
   declarations: [UseServiceComponent],
-  exports: [UseServiceComponent]
+  exports: [UseServiceComponent],
 })
 export class UseServiceModule {}

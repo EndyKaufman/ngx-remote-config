@@ -9,8 +9,8 @@ export const UsagePageRoutes: Routes = [
       name: 'usage',
       title: 'Usage',
       visible: true,
-      svgIcon: 'cloud_circle'
+      svgIcon: 'cloud_circle',
     },
-    children: []
-  }
+    children: [],
+  },
 ];

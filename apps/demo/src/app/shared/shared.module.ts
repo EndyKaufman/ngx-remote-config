@@ -7,13 +7,13 @@ import { CustomJsonPipe } from './pipes/custom-json.pipe';
   imports: [CommonModule],
   providers: [],
   declarations: [SafeHtmlPipe, CustomJsonPipe],
-  exports: [CommonModule, SafeHtmlPipe, CustomJsonPipe]
+  exports: [CommonModule, SafeHtmlPipe, CustomJsonPipe],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: []
+      providers: [],
     };
   }
 }

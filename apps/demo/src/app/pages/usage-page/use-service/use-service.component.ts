@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'use-service',
   templateUrl: './use-service.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UseServiceComponent {
   config$: Observable<any>;

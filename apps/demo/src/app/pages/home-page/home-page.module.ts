@@ -15,8 +15,8 @@ import { MarkdownModule } from 'ngx-markdown';
     MarkdownModule.forRoot(),
     DocsExampleModule.forRoot(),
     SourceTabsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
-  declarations: [HomePageComponent]
+  declarations: [HomePageComponent],
 })
 export class HomePageModule {}
