@@ -43,7 +43,7 @@
     "@angular/core": "^9.1.9"
   },
   "dependencies": {
-    "path-to-regexp": "^6.1.0",
+    "path-to-regexp": "^8.0.0",
     "dot-object": "^2.1.3"
   }
 }
